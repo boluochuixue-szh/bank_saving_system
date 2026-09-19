@@ -1,0 +1,227 @@
+银行储蓄管理系统学习对话记录
+
+============================== 用户 ==============================
+
+我是一名软件工程大二学生，正在学习使用 Qt
+制作银行储蓄管理系统。这行报错是什么意思。
+
+用户上传了一张 Qt Creator 截图，截图中的关键报错为：
+
+undefined reference to `AdminWindow::on_showAllButton_clicked()’
+
+============================== 助手 ==============================
+
+这个报错的真正问题不是 moc_adminwindow.cpp 文件写错了，而是 Qt
+找不到你声明的槽函数。
+
+报错：
+
+undefined reference to `AdminWindow::on_showAllButton_clicked()’
+
+意思是：程序在链接阶段发现，AdminWindow 类中需要调用
+on_showAllButton_clicked()，但是找不到这个函数的具体实现。
+
+不是“函数没有声明”，而是“声明了，却没有找到实现”。
+
+moc_adminwindow.cpp 是 Qt 的
+MOC（元对象编译器）自动生成的代码。它准备在按钮点击时调用这个槽函数，但链接时找不到对应的函数实现，所以报错。
+
+不要修改 moc_adminwindow.cpp，因为它是 Qt 自动生成的文件。
+
+应该检查 adminwindow.h 中是否有：
+
+private slots: void on_showAllButton_clicked();
+
+如果有，就需要在 adminwindow.cpp 中实现：
+
+void AdminWindow::on_showAllButton_clicked() { //
+这里以后写“查询全部客户”的功能 }
+
+函数名必须完全一致，包括大小写。
+
+如果已经写了函数，还要检查是否错误地写成：
+
+void on_showAllButton_clicked() { }
+
+正确写法必须带上 AdminWindow::：
+
+void AdminWindow::on_showAllButton_clicked() { }
+
+另外，如果修改过按钮的 objectName，也要保证头文件声明、cpp 实现和
+Designer 中的按钮名称一致。
+
+截图顶部的 Warning：
+
+Warning: This file is not part of any project.
+
+只是 Qt Creator 提示当前打开的 moc_adminwindow.cpp
+不属于项目中的普通源文件，代码模型可能无法正确解析。它不是这次编译失败的主要原因。
+
+建议检查顺序：
+
+1.  打开 adminwindow.h，找到 on_showAllButton_clicked() 的声明。
+2.  打开 adminwindow.cpp，搜索 on_showAllButton_clicked。
+3.  如果没有找到，就添加对应实现。
+4.  重新构建项目。
+5.  如果仍然报错，执行“构建 → 清理项目”，再执行“构建 → 重新构建项目”。
+
+============================== 用户 ==============================
+
+代码：
+
+void UserWindow::on_reportLossButton_clicked() { Customer *customer =
+bankSystem->findCustomer(accountNumber);
+
+    if (customer == nullptr) {
+        QMessageBox::warning(
+            this,
+            "挂失失败",
+            "没有找到当前账户！"
+        );
+        return;
+    }
+
+    if (customer->getIsLost()) {
+        QMessageBox::information(
+            this,
+            "提示",
+            "该账户已经挂失，无需重复操作。"
+        );
+        return;
+    }
+
+    QMessageBox::StandardButton result =
+        QMessageBox::question(
+            this,
+            "账户挂失",
+            "确定要挂失当前账户吗？",
+            QMessageBox::Yes | QMessageBox::No
+        );
+
+    if (result != QMessageBox::Yes) {
+        return;
+    }
+
+    customer->reportLoss();
+    bankSystem->saveToFile("bank_data.json");
+
+    QMessageBox::information(
+        this,
+        "挂失成功",
+        "账户已成功挂失，挂失后不能进行存取款操作。"
+    );
+
+}
+
+出现报错：
+
+C:\12420.cpp:187: error: Out-of-line definition of
+‘on_reportLossButton_clicked’ does not match any declaration in
+‘UserWindow’; did you mean ‘on_reportButton_clicked’? (fix available)
+
+============================== 助手 ==============================
+
+这次报错和刚才的 AdminWindow 问题是同一类错误。
+
+报错：
+
+Out-of-line definition of ‘on_reportLossButton_clicked’ does not match
+any declaration in ‘UserWindow’; did you mean ‘on_reportButton_clicked’?
+
+意思是：你在 userwindow.cpp 中实现了：
+
+void UserWindow::on_reportLossButton_clicked() { // 挂失代码 }
+
+但是 UserWindow 类中没有声明 on_reportLossButton_clicked() 这个函数。
+
+Qt Creator 提示的 on_reportButton_clicked() 表示：你可能已经声明了
+on_reportButton_clicked()，但是实现时写成了
+on_reportLossButton_clicked()，导致名称不一致。
+
+建议打开 userwindow.h，检查是否有：
+
+private slots: void on_reportButton_clicked();
+
+如果按钮在 Qt Designer 中的 objectName 是 reportLossButton，那么应该把
+userwindow.h 中的声明改为：
+
+private slots: void on_reportLossButton_clicked();
+
+并让 userwindow.cpp 中的实现保持：
+
+void UserWindow::on_reportLossButton_clicked() { Customer *customer =
+bankSystem->findCustomer(accountNumber);
+
+    if (customer == nullptr) {
+        QMessageBox::warning(
+            this,
+            "挂失失败",
+            "没有找到当前账户！"
+        );
+        return;
+    }
+
+    if (customer->getIsLost()) {
+        QMessageBox::information(
+            this,
+            "提示",
+            "该账户已经挂失，无需重复操作。"
+        );
+        return;
+    }
+
+    QMessageBox::StandardButton result =
+        QMessageBox::question(
+            this,
+            "账户挂失",
+            "确定要挂失当前账户吗？",
+            QMessageBox::Yes | QMessageBox::No
+        );
+
+    if (result != QMessageBox::Yes) {
+        return;
+    }
+
+    customer->reportLoss();
+    bankSystem->saveToFile("bank_data.json");
+
+    QMessageBox::information(
+        this,
+        "挂失成功",
+        "账户已成功挂失，挂失后不能进行存取款操作。"
+    );
+
+}
+
+另外，代码中的 customer->getIsLost() 和 customer->reportLoss() 说明
+Customer 类中必须有对应的声明和实现。如果没有，后续可能出现 No member
+named ‘getIsLost’ 或 No member named ‘reportLoss’。
+
+当前先解决函数声明和实现不一致的问题。
+
+============================== 用户 ==============================
+
+maindow 和 userwindow 的 titleLable 会不会冲突
+
+============================== 助手 ==============================
+
+不会冲突。MainWindow 和 UserWindow 中都可以有一个叫 titleLabel 的控件。
+
+原因是它们属于不同的窗口类。例如：
+
+MainWindow: ui->titleLabel->setText(“银行储蓄管理系统”);
+
+UserWindow: ui->titleLabel->setText(“用户中心”);
+
+两个 titleLabel
+分别属于不同的窗口对象，不是同一个控件，所以不会因为名字相同而冲突。
+
+只有在同一个 .ui 文件、同一个窗口中创建两个相同 objectName
+的控件，才可能出现问题。
+
+对于银行储蓄管理系统，可以这样设计：
+
+MainWindow：银行储蓄管理系统 AdminWindow：管理员工作台
+UserWindow：用户中心
+
+三个窗口都使用 ui->titleLabel 也没有问题，不需要为了避免冲突而改名。

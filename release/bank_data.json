@@ -1,0 +1,608 @@
+[
+    {
+        "accountNumber": "10001",
+        "address": "北京市",
+        "balance": 1700,
+        "depositType": "定期1年",
+        "frozenDate": "2026-09-11T14:52:54",
+        "interestRate": 0.0198,
+        "isFrozen": true,
+        "isLost": false,
+        "lostDate": "",
+        "name": "张三",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 500,
+                "date": "2026-09-07T15:48:41",
+                "employeeId": "EMP001",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            },
+            {
+                "amount": 500,
+                "date": "2026-09-07T15:48:57",
+                "employeeId": "EMP001",
+                "id": 2,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            },
+            {
+                "amount": 300,
+                "date": "2026-09-07T15:49:29",
+                "employeeId": "EMP001",
+                "id": 3,
+                "otherAccount": "",
+                "remark": "",
+                "type": "取款"
+            },
+            {
+                "amount": 500,
+                "date": "2026-09-07T15:55:34",
+                "employeeId": "EMP001",
+                "id": 4,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            },
+            {
+                "amount": 500,
+                "date": "2026-09-07T15:55:55",
+                "employeeId": "EMP001",
+                "id": 5,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10003",
+        "address": "南京市",
+        "balance": 1500,
+        "depositType": "定期1年",
+        "frozenDate": "",
+        "interestRate": 0.0198,
+        "isFrozen": false,
+        "isLost": true,
+        "lostDate": "2026-09-07T15:56:23",
+        "name": "王五",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 3000,
+                "date": "2026-09-07T15:56:11",
+                "employeeId": "EMP001",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            },
+            {
+                "amount": 1500,
+                "date": "2026-09-07T15:56:17",
+                "employeeId": "EMP001",
+                "id": 2,
+                "otherAccount": "",
+                "remark": "",
+                "type": "取款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10002",
+        "address": "上海市",
+        "balance": 35000,
+        "depositType": "定期1年",
+        "frozenDate": "",
+        "interestRate": 0.0198,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "李四",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 40000,
+                "date": "2026-09-11T15:22:38",
+                "employeeId": "EMP001",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            },
+            {
+                "amount": 5000,
+                "date": "2026-09-11T15:26:35",
+                "employeeId": "",
+                "id": 2,
+                "otherAccount": "10000",
+                "remark": "测试转账",
+                "type": "转账"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10004",
+        "address": "上海市",
+        "balance": 8000,
+        "depositType": "定期5年",
+        "frozenDate": "",
+        "interestRate": 0.035,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "李四",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 3000,
+                "date": "2026-09-11T15:29:21",
+                "employeeId": "",
+                "id": 1,
+                "otherAccount": "10000",
+                "remark": "测试转账",
+                "type": "转账"
+            },
+            {
+                "amount": 5000,
+                "date": "2026-09-11T15:36:05",
+                "employeeId": "EMP001",
+                "id": 2,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10005",
+        "address": "北京市",
+        "balance": 50000,
+        "depositType": "定期3年",
+        "frozenDate": "",
+        "interestRate": 0.0225,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "张三",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 50000,
+                "date": "2026-09-11T13:49:22",
+                "employeeId": "EMP001",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10000",
+        "address": "南京市",
+        "balance": 2000,
+        "depositType": "定期3年",
+        "frozenDate": "",
+        "interestRate": 0.0225,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "赵六",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 5000,
+                "date": "2026-09-11T15:26:35",
+                "employeeId": "",
+                "id": 1,
+                "otherAccount": "10002",
+                "remark": "测试转账",
+                "type": "转账"
+            },
+            {
+                "amount": 3000,
+                "date": "2026-09-11T15:29:21",
+                "employeeId": "",
+                "id": 2,
+                "otherAccount": "10004",
+                "remark": "测试转账",
+                "type": "转账"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10006",
+        "address": "北京市",
+        "balance": 4000,
+        "depositType": "定期1年",
+        "frozenDate": "",
+        "interestRate": 0.0198,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "王维",
+        "password": "234567",
+        "transactions": [
+            {
+                "amount": 5000,
+                "date": "2026-09-08T14:40:22",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            },
+            {
+                "amount": 3000,
+                "date": "2026-09-08T16:31:27",
+                "employeeId": "EMP001",
+                "id": 2,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            },
+            {
+                "amount": 4000,
+                "date": "2026-09-08T16:31:45",
+                "employeeId": "EMP001",
+                "id": 3,
+                "otherAccount": "",
+                "remark": "",
+                "type": "取款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10007",
+        "address": "南京市",
+        "balance": 5500,
+        "depositType": "定期1年",
+        "frozenDate": "",
+        "interestRate": 0.0198,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "王强",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 5000,
+                "date": "2026-09-15T09:45:21",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            },
+            {
+                "amount": 2000,
+                "date": "2026-09-15T09:58:34",
+                "employeeId": "EMP001",
+                "id": 2,
+                "otherAccount": "",
+                "remark": "",
+                "type": "存款"
+            },
+            {
+                "amount": 1500,
+                "date": "2026-09-15T09:59:08",
+                "employeeId": "EMP001",
+                "id": 3,
+                "otherAccount": "",
+                "remark": "",
+                "type": "取款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10008",
+        "address": "杭州市",
+        "balance": 12000,
+        "depositType": "定期3年",
+        "frozenDate": "",
+        "interestRate": 0.0225,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "刘洋",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 12000,
+                "date": "2026-09-15T09:45:55",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10009",
+        "address": "苏州市",
+        "balance": 27000,
+        "depositType": "定期5年",
+        "frozenDate": "",
+        "interestRate": 0.035,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "陈晨",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 30000,
+                "date": "2026-09-15T09:46:30",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            },
+            {
+                "amount": 3000,
+                "date": "2026-09-15T10:00:11",
+                "employeeId": "",
+                "id": 2,
+                "otherAccount": "10010",
+                "remark": "验收转账测试",
+                "type": "转账"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10010",
+        "address": "无锡市",
+        "balance": 3800,
+        "depositType": "定期1年",
+        "frozenDate": "",
+        "interestRate": 0.0198,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "杨帆",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 800,
+                "date": "2026-09-15T09:46:54",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            },
+            {
+                "amount": 3000,
+                "date": "2026-09-15T10:00:11",
+                "employeeId": "",
+                "id": 2,
+                "otherAccount": "10009",
+                "remark": "验收转账测试",
+                "type": "转账"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10011",
+        "address": "上海市",
+        "balance": 25000,
+        "depositType": "定期3年",
+        "frozenDate": "",
+        "interestRate": 0.0225,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "周敏",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 25000,
+                "date": "2026-09-15T09:47:29",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10012",
+        "address": "北京市",
+        "balance": 50000,
+        "depositType": "定期5年",
+        "frozenDate": "",
+        "interestRate": 0.035,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "吴浩",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 50000,
+                "date": "2026-09-15T09:48:05",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10014",
+        "address": "杭州市",
+        "balance": 3500,
+        "depositType": "定期3年",
+        "frozenDate": "",
+        "interestRate": 0.0225,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "孙婷",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 3500,
+                "date": "2026-09-15T09:49:00",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10015",
+        "address": "苏州市",
+        "balance": 80000,
+        "depositType": "定期5年",
+        "frozenDate": "",
+        "interestRate": 0.035,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "赵磊",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 80000,
+                "date": "2026-09-15T09:49:33",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10016",
+        "address": "上海市",
+        "balance": 15000,
+        "depositType": "定期1年",
+        "frozenDate": "",
+        "interestRate": 0.0198,
+        "isFrozen": false,
+        "isLost": true,
+        "lostDate": "2026-09-15T10:04:28",
+        "name": "何静",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 15000,
+                "date": "2026-09-15T09:49:58",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10017",
+        "address": "北京市",
+        "balance": 100000,
+        "depositType": "定期3年",
+        "frozenDate": "",
+        "interestRate": 0.0225,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "黄伟",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 100000,
+                "date": "2026-09-15T09:50:28",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10018",
+        "address": "南京市",
+        "balance": 20000,
+        "depositType": "定期5年",
+        "frozenDate": "",
+        "interestRate": 0.035,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "林琳",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 20000,
+                "date": "2026-09-15T09:51:17",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10019",
+        "address": "杭州市",
+        "balance": 1000,
+        "depositType": "定期1年",
+        "frozenDate": "",
+        "interestRate": 0.0198,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "张浩",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 1000,
+                "date": "2026-09-15T09:51:44",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    },
+    {
+        "accountNumber": "10013",
+        "address": "南京市",
+        "balance": 0,
+        "depositType": "定期1年",
+        "frozenDate": "",
+        "interestRate": 0.0198,
+        "isFrozen": false,
+        "isLost": false,
+        "lostDate": "",
+        "name": "郑凯",
+        "password": "123456",
+        "transactions": [
+            {
+                "amount": 0,
+                "date": "2026-09-15T10:10:54",
+                "employeeId": "管理员",
+                "id": 1,
+                "otherAccount": "",
+                "remark": "",
+                "type": "开户存款"
+            }
+        ]
+    }
+]

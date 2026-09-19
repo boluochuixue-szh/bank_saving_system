@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserWindow</class>
+ <widget class="QWidget" name="UserWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #181A1F;
+    color: #FFFFFF;
+}
+
+QLabel {
+    color: #E8EAED;
+}
+
+QLabel#titleLabel {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+QLabel#accountLabel {
+    color: #9EA6B3;
+    font-size: 13px;
+}
+
+QPushButton {
+    background-color: #24272D;
+    color: #F5F7FA;
+    border: 1px solid #3A3F47;
+    border-radius: 10px;
+    font-size: 14px;
+    min-height: 52px;
+}
+
+QPushButton:hover {
+    background-color: #30353D;
+    border: 1px solid #1677FF;
+}
+
+QPushButton:pressed {
+    background-color: #1268D5;
+    border: 1px solid #1268D5;
+}
+
+QPushButton#depositButton,
+QPushButton#withdrawButton,
+QPushButton#transferButton {
+    background-color: #1677FF;
+    border: 1px solid #1677FF;
+    font-weight: bold;
+}
+
+QPushButton#depositButton:hover,
+QPushButton#withdrawButton:hover,
+QPushButton#transferButton:hover {
+    background-color: #398BFF;
+}
+
+QPushButton#reportLossButton {
+    background-color: #2B2E34;
+}
+
+QPushButton#exitButton {
+    background-color: #25282E;
+}
+
+QPushButton#reportLossButton:hover,
+QPushButton#exitButton:hover {
+    border: 1px solid #1677FF;
+}
+
+QLabel#accountLabel {
+    background-color: #20242B;
+    color: #AEB7C4;
+    border: 1px solid #343A44;
+    border-radius: 8px;
+    padding: 6px 16px;
+}
+
+QPushButton#reportLossButton {
+    background-color: #3A3030;
+    color: #FFB4B4;
+    border: 1px solid #5A3A3A;
+}
+
+QPushButton#reportLossButton:hover {
+    background-color: #4A3535;
+    border: 1px solid #E57373;
+}
+
+QPushButton#reportLossButton:pressed {
+    background-color: #5A3030;
+}
+
+QPushButton#exitButton {
+    background-color: #25282E;
+    color: #C8CDD5;
+    border: 1px solid #41464F;
+}
+
+QPushButton#exitButton:hover {
+    background-color: #353A42;
+    border: 1px solid #8A929E;
+}
+
+QPushButton#exitButton:pressed {
+    background-color: #1C1F24;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>60</number>
+   </property>
+   <property name="topMargin">
+    <number>30</number>
+   </property>
+   <property name="rightMargin">
+    <number>60</number>
+   </property>
+   <property name="bottomMargin">
+    <number>30</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>银行储蓄管理系统——用户中心</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="accountLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>35</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>当前登录账号：</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="spacing">
+      <number>15</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="depositButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>存款</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="modifyButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>修改储户信息</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="withdrawButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>取款</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="transferButton">
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>转账</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="balanceButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>查询余额</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="interestButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>查看利息</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="recordButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>查询交易记录</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="reportLossButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>账户挂失</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="exitButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>退出登录</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

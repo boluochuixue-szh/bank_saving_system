@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminWindow</class>
+ <widget class="QWidget" name="AdminWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #181A1F;
+    color: #E8EAED;
+}
+
+QLabel {
+    color: #C9CED6;
+    font-size: 13px;
+}
+
+QLabel#titleLabel {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+QLineEdit {
+    background-color: #202329;
+    color: #F5F7FA;
+    border: 1px solid #363B44;
+    border-radius: 7px;
+    padding: 6px 10px;
+    min-height: 30px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #1677FF;
+}
+
+QComboBox {
+    background-color: #202329;
+    color: #E8EAED;
+    border: 1px solid #363B44;
+    border-radius: 7px;
+    padding: 5px 10px;
+    min-height: 30px;
+}
+
+QComboBox:hover {
+    border: 1px solid #4A5260;
+}
+
+QComboBox:focus {
+    border: 1px solid #1677FF;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #202329;
+    color: #E8EAED;
+    selection-background-color: #1677FF;
+    selection-color: #FFFFFF;
+}
+
+QPushButton {
+    background-color: #25282E;
+    color: #E8EAED;
+    border: 1px solid #393E47;
+    border-radius: 7px;
+    min-height: 36px;
+    padding: 4px 12px;
+    font-size: 13px;
+}
+
+QPushButton:hover {
+    background-color: #30353D;
+    border: 1px solid #1677FF;
+}
+
+QPushButton:pressed {
+    background-color: #1268D5;
+    border: 1px solid #1268D5;
+}
+
+QPushButton#showAllButton,
+QPushButton#addCustomerButton {
+    background-color: #1677FF;
+    color: #FFFFFF;
+    border: 1px solid #1677FF;
+    font-weight: bold;
+}
+
+QPushButton#showAllButton:hover,
+QPushButton#addCustomerButton:hover {
+    background-color: #398BFF;
+}
+
+QPushButton#deleteButton {
+    background-color: #3A3030;
+    color: #FFB4B4;
+    border: 1px solid #5A3A3A;
+}
+
+QPushButton#deleteButton:hover {
+    background-color: #4A3535;
+    border: 1px solid #E57373;
+}
+
+QPushButton#freezeButton {
+    background-color: #34302A;
+    color: #FFD591;
+    border: 1px solid #5A4A32;
+}
+
+QPushButton#freezeButton:hover {
+    background-color: #443A2B;
+    border: 1px solid #D9A441;
+}
+
+QPushButton#unfreezeButton {
+    background-color: #29362F;
+    color: #A7E3BE;
+    border: 1px solid #3D5A49;
+}
+
+QPushButton#unfreezeButton:hover {
+    background-color: #31483B;
+    border: 1px solid #65B88A;
+}
+
+QPushButton#exitButton {
+    background-color: #25282E;
+    color: #AEB5BF;
+}
+
+QPushButton#exitButton:hover {
+    background-color: #353A42;
+    border: 1px solid #7E8793;
+}
+
+QTableView {
+    background-color: #202329;
+    alternate-background-color: #24272D;
+    color: #E8EAED;
+    gridline-color: #343941;
+    border: 1px solid #363B44;
+    border-radius: 7px;
+    selection-background-color: #1677FF;
+    selection-color: #FFFFFF;
+}
+
+QHeaderView::section {
+    background-color: #2B2F36;
+    color: #F5F7FA;
+    border: none;
+    border-right: 1px solid #3A3F47;
+    border-bottom: 1px solid #3A3F47;
+    padding: 7px;
+    font-weight: bold;
+}
+
+QScrollBar:vertical {
+    background-color: #202329;
+    width: 10px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #4A505A;
+    border-radius: 5px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #626A76;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="titleLabel">
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>管理员管理界面</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="searchAccountLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>44</height>
+          </size>
+         </property>
+         <property name="placeholderText">
+          <string>请输入储户账号</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="searchButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>查询储户</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="recordButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>查看交易记录</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="modifyButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>修改储户信息</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="interestButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>查看利息</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="freezeButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>冻结账号</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="unfreezeButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>解冻账号</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="deleteButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>删除储户</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="3">
+          <widget class="QPushButton" name="showAllButton">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>46</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>显示所有储户</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_2">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>储种筛选：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QComboBox" name="sortComboBox">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>42</height>
+            </size>
+           </property>
+           <item>
+            <property name="text">
+             <string>账号从小到大</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>账号从大到小</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>余额从高到低</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>余额从低到高</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QPushButton" name="addCustomerButton">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>46</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>新增储户</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>排序方式：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QComboBox" name="statusComboBox">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>42</height>
+            </size>
+           </property>
+           <item>
+            <property name="text">
+             <string>全部状态</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>正常</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>已挂失</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>已冻结</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QComboBox" name="depositTypeComboBox">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>42</height>
+            </size>
+           </property>
+           <item>
+            <property name="text">
+             <string>全部储种</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>定期1年</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>定期3年</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>定期5年</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="label_3">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>账户状态：</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="exitButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>退出管理员登录</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableView" name="customerTable">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="verticalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
